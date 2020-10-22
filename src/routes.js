@@ -11,7 +11,7 @@ module.exports = function(app) {
   app.get('/users', getUsersController)
   app.get('/subjects', getSubjectsController)
   app.get('/experiments', getExperimentsController)
-  app.get('/experiments/:id', getExperimentByIdController)
+  app.get('/experiments/:timeLimit', getExperimentByIdController)
   app.get('/questions', getQuestionsController)
   app.get('/options', getOptionsController)
   app.get('/answers', getAnswersController)
