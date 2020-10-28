@@ -1,0 +1,1 @@
+module.exports = (transaction, recieveMySqlResults, params) => transaction.query('SELECT * FROM EXPERIMENT WHERE timeLimit=? and expId = ?', [params.timeLimit, params.expId],  recieveMySqlResults)
