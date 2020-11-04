@@ -10,19 +10,19 @@ const getOptionsController = require('./client/get-options-controller')
 const getAnswersController = require('./client/get-answers-controller')
 const getNumParticipantsByExpIDController = require('./client/get-num-participants-controller')
 const getDateCreatedByExpIDController = require('./client/get-dateCreated-controller')
+const getTableDataController = require('./client/get-tableData-controller')
 
 module.exports = function(app) {
   app.get('/users', getUsersController)
   app.get('/subjects', getSubjectsController)
   app.get('/experiments', getExperimentsController)
-  app.get('/experiments/participants/:expID',getNumParticipantsByExpIDController)
-  app.get('/experiments/dateCreated/:expID',getDateCreatedByExpIDController)
+  app.get('/experiments/TableData',getTableDataController)
   app.get('/experiments/byId/:id', getExperimentByIdController)
   app.get('/experiments/:timeLimit', getExperimentBytimeLimitController)
+  app.get('/experiments/dateCreated/:expID',getDateCreatedByExpIDController)
+  app.get('/experiments/participants/:expID',getNumParticipantsByExpIDController)
   app.get('/experiments/:expId/:timeLimit', getExperimentByIdAndtimeLimitController)
-
   app.get('/questions', getQuestionsController)
-
   app.get('/options', getOptionsController)
   app.get('/answers', getAnswersController)
 }
