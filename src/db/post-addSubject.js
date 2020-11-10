@@ -1,0 +1,1 @@
+module.exports = (transaction, recieveMySqlResults, params) => transaction.query('Insert into subject (subjectID, age, gender) VALUES (?, ?, ?);', [params.id, params.age, params.gender],  recieveMySqlResults)
