@@ -1,0 +1,1 @@
+module.exports = (transaction, recieveMySqlResults, params) => transaction.query('Insert into option (letter, itemName, associatedExpID, value1, value2 ) VALUES (?, ?, ?, ?, ?);', [params.letter, params.itemName, params.associatedExpID, params.value1, params.value2],  recieveMySqlResults)
