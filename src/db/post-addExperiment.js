@@ -1,0 +1,1 @@
+module.exports = (transaction, recieveMySqlResults, params) => transaction.query('Insert into experiment (timeLimit, experimentName, dateCreated) VALUES (?, ?, ?);', [params.timeLimit, params.experimentName, params.dateCreated],  recieveMySqlResults)

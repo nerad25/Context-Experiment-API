@@ -11,7 +11,10 @@ const getNumParticipantsByExpIDController = require('./client/get-num-participan
 const getDateCreatedByExpIDController = require('./client/get-dateCreated-controller')
 const getTableDataController = require('./client/get-tableData-controller')
 
-const postSubjectController = require('./client/post-addSubject-controller')
+const postAddUserController = require('./client/post-addUser-controller')
+const postAddSubjectController = require('./client/post-addSubject-controller')
+const postAddExperimentController = require('./client/post-addExperiment-controller')
+const postAddQuestionController = require('./client/post-addQuestion-controller')
 
 module.exports = function(app) {
   app.get('/users', getUsersController)
@@ -27,6 +30,9 @@ module.exports = function(app) {
   app.get('/options', getOptionsController)
   app.get('/answers', getAnswersController)
 
-  app.post('/users/addSubject/:id/:age/:gender', postSubjectController)
+  app.post('/users/addUser', postAddUserController)
+  app.post('/users/addSubject/:id/:age/:gender', postAddSubjectController)
+  app.post('/experiment/addExperiment/:timeLimit/:experimentName/:dateCreated', postAddExperimentController)
+  app.post('/experiment/addQuestion/:itemName/:associatedExpId/:att1/:att2/:decoyTargetA/:decoyTargetB/:target/:unavaliable', postAddQuestionController)
 
 }
