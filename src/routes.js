@@ -16,6 +16,7 @@ const postAddSubjectController = require('./client/post-addSubject-controller')
 const postAddExperimentController = require('./client/post-addExperiment-controller')
 const postAddQuestionController = require('./client/post-addQuestion-controller')
 const postAddOptionController = require('./client/post-addOption-controller')
+const postAddAnswerController = require('./client/post-addAnswer-controller')
 
 module.exports = function(app) {
   app.get('/users', getUsersController)
@@ -36,5 +37,5 @@ module.exports = function(app) {
   app.post('/experiment/addExperiment/:timeLimit/:experimentName/:dateCreated', postAddExperimentController)
   app.post('/experiment/addQuestion/:itemName/:associatedExpId/:att1/:att2/:decoyTargetA/:decoyTargetB/:target/:unavaliable', postAddQuestionController)
   app.post('/experiment/addOption/:letter/:itemName/:associatedExpID/:value1/:value2', postAddOptionController)
-
+  app.post('/experiment/addAnswer/:subjectID/:itemName/:associatedExpID/:decisionTime/:selectedOption/:dateTaken', postAddAnswerController)
 }
