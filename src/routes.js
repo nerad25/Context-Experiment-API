@@ -19,6 +19,8 @@ const postAddQuestionController = require('./client/post-addQuestion-controller'
 const postAddOptionController = require('./client/post-addOption-controller')
 const postAddAnswerController = require('./client/post-addAnswer-controller')
 
+const updateExperimentStatusController = require('./client/update-status-controller')
+
 
 module.exports = function(app) {
   app.get('/users', getUsersController)
@@ -41,4 +43,6 @@ module.exports = function(app) {
   app.post('/experiment/addQuestion/:itemName/:associatedExpId/:att1/:att2/:decoyTargetA/:decoyTargetB/:target/:unavaliable', postAddQuestionController)
   app.post('/experiment/addOption/:letter/:itemName/:associatedExpID/:value1/:value2', postAddOptionController)
   app.post('/experiment/addAnswer/:subjectID/:itemName/:associatedExpID/:decisionTime/:selectedOption/:dateTaken', postAddAnswerController)
+
+  app.put('/experiments/updateExperimentStatus/:expName/:status', updateExperimentStatusController)
 }
