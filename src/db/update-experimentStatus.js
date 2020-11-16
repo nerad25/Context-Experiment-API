@@ -1,1 +1,1 @@
-module.exports = (transaction, recieveMySqlResults, params) => transaction.query('UPDATE experiment SET isActive=? WHERE experimentName=?;', [params.status, params.expName],  recieveMySqlResults)
+module.exports = (transaction, recieveMySqlResults, params) => transaction.query('UPDATE experiment SET isActive=? WHERE expID=?;', [params.status, params.expID],  recieveMySqlResults)

@@ -44,5 +44,5 @@ module.exports = function(app) {
   app.post('/experiment/addOption/:letter/:itemName/:associatedExpID/:value1/:value2', postAddOptionController)
   app.post('/experiment/addAnswer/:subjectID/:itemName/:associatedExpID/:decisionTime/:selectedOption/:dateTaken', postAddAnswerController)
 
-  app.put('/experiments/updateExperimentStatus/:expName/:status', updateExperimentStatusController)
+  app.put('/experiments/updateExperimentStatus/:expID/:status', updateExperimentStatusController)
 }
