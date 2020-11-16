@@ -10,6 +10,7 @@ const getAnswersController = require('./client/get-answers-controller')
 const getNumParticipantsByExpIDController = require('./client/get-num-participants-controller')
 const getDateCreatedByExpIDController = require('./client/get-dateCreated-controller')
 const getTableDataController = require('./client/get-tableData-controller')
+const getIsActiveController = require('./client/get-isActive-controller')
 
 const postAddUserController = require('./client/post-addUser-controller')
 const postAddSubjectController = require('./client/post-addSubject-controller')
@@ -18,11 +19,13 @@ const postAddQuestionController = require('./client/post-addQuestion-controller'
 const postAddOptionController = require('./client/post-addOption-controller')
 const postAddAnswerController = require('./client/post-addAnswer-controller')
 
+
 module.exports = function(app) {
   app.get('/users', getUsersController)
   app.get('/subjects', getSubjectsController)
   app.get('/experiments', getExperimentsController)
   app.get('/experiments/TableData',getTableDataController)
+  app.get('/experiments/isActive/:status',getIsActiveController)
   app.get('/experiments/byId/:id', getExperimentByIdController)
   app.get('/experiments/:timeLimit', getExperimentBytimeLimitController)
   app.get('/experiments/dateCreated/:expID',getDateCreatedByExpIDController)
